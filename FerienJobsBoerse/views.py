@@ -13,8 +13,12 @@ routes = [
 
 def start(request):
     return render(request, '../templates/home.html', {'routes': routes, 'current_route': '/'})
+
 def suche(request):
     return render(request, '../templates/suche.html', {'routes': routes, 'current_route': '/suche/'})
 
 def login(request):
     return render(request, '../templates/login.html', {models.Person.email,models.Person.password})
+
+def job(request):
+    return render(request, '../templates/job.html', {'routes': routes, 'current_route': '/job/'})

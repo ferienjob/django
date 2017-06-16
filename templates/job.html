@@ -1,0 +1,49 @@
+{% extends "_base.html" %}
+{% load static %}
+
+{% block title %}Jobprofil{% endblock %}
+
+{% block head %}
+  <link rel="stylesheet" type="text/css" href="{% static "job_and_firma.css" %}">
+{% endblock %}
+
+{% block content %}
+  <div class="container" >
+    <h1>Job</h1>
+    <div class="Container_oben">
+      <div class="Infos_U">
+        <p><span>Tätigkeit:</span></p>
+        <p><span>Firma:</span></p>
+        <p><span>Zeitraum:</span>Sommerferien</p>
+        <a href="http://maps.google.com/?q=addresse CODE Education, GmbH Rheinsberger Str. 76/77, D-10115 Berlin"><span>Adresse: </span> CODE Education, GmbH Rheinsberger Str. 76/77, D-10115 Berlin</a>
+      </div>
+    </div>
+
+    <h2>Beschreibung zum Job</h2>
+    <div class="Text">
+      <p><span> Verdienst pro Stunde:</span>  5 Euro</p>
+      <p><span> Uhrzeit:</span>  8:00 bis 15:00 Uhr</p>
+      <p><span> Mindestalter: </span> 16 Jahre</p>
+      <p><span> Anforderungen:</span> </p>
+    </div>
+
+
+    <div class="Text">
+    <p>Du arbeitest ..., somit wirst du häufig... </p>
+
+  </div>
+
+  <h3>Dein Ansprechpatner</h3>
+
+  <div class="Container_mitte">
+    <div class="Infos_A">
+    <img class="Ansprechpatner" src="Ansprechpatner%20J..jpg" width="200px">
+    </div>
+    <div class="Infos_Ansp">
+      <p><span> Name: </span>Jonathan</p>
+      <p> <a href="https://code.berlin/de/"> <span> Homepage der Firma:</span>  code.berlin.de</a></p>
+      <p><a href="tel:+49 (30) 120 859 61"><span> Telefonnummer</span> +49 (30) 120 859 61</a></p>
+      <p><a href="mailto:hello@code.berlin"><span> E-Mail:</span>  hello@code.berlin</a><br></p>
+     </div>
+  </div>
+{% endblock %}
