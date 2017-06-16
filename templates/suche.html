@@ -1,10 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/suche.css">
+    <title>* Ferien Jobs - Home *</title>
+  </head>
+  <body>
+    <div class="container">
+      <form
+        class="suche"
+        method="GET"
+        action="/search"
+        >
+        <label class="suche__title">
+          Job
+          <input name="title" placeholder="z.B.: Koch" />
+        </label>
+        <label class="suche__branche">
+          Branche
+          <select name="branche">
+            <option value="alle">... in allen</option>
+            <option value="gastronomie">... in Gastronomie</option>
+          </select>
+        </label>
+        <label class="suche__ort">
+          Ort
+          <input name="ort" placeholder="z.B.: Köln" />
+        </label>
+        <button class="suche__button" type='submit'>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+          </svg>
+        </button>
+      </form>
 
-</body>
+      <div class="jobs">
+        <a class="job" href="/job/1">
+          <img src="http://via.placeholder.com/100x100" />
+          <div class="job__info">
+            <p class="job__name">Koch</p>
+            <p class="job__company">Code+Design Camp</p>
+          </div>
+        </a>
+        <a class="job" href="/job/2">
+          <img src="http://via.placeholder.com/100x100" />
+          <div class="job__info">
+            <p class="job__name">Barkeeper</p>
+            <p class="job__company">Code+Design Camp</p>
+          </div>
+        </a>
+      </div>
+
+    </div>
+
+
+  </body>
 </html>
+
+<!-- // python manage.py runserver -->

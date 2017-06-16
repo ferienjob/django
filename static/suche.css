@@ -1,0 +1,123 @@
+
+/* - - - - - global - - - - - */
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+  font-size: 18px;
+}
+.container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+/* - - - - - suche - - - - - */
+.suche {
+  /*background: lightgrey;*/
+  margin: 50px 0 50px 0;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+
+.suche input {
+  font-size: 18px;
+  margin: 0;
+}
+.suche__title,
+.suche__title input,
+.suche__ort,
+.suche__ort input {
+  display: block;
+  width: 100%;
+}
+
+.suche__branche {
+  margin-right: 10px;
+}
+.suche__button {
+  margin-left: 10px;
+}
+.suche__branche {
+  width: 35%;
+}
+.suche__branche select {
+  display: block;
+
+  -webkit-appearance: none;
+  appearance: none;
+
+  height: 27px;
+  width: 100%;
+  border: 1px solid lightgrey;
+  border-radius: 0;
+
+  /*height: 27px;
+  font-size: 20px;*/
+}
+/*.suche__branche select:after {
+  content: '&#9660;';
+  width: 5px;
+  height: 5px;
+}*/
+
+.suche__button {
+  height: 27px;
+  width: 27px;
+  padding: 3px;
+
+  cursor: pointer;
+  border: 1px solid #4da9ff;
+  background: #4da9ff;
+  color: white;
+
+  transition: 0.4s border, 0.4s background-color;
+}
+.suche__button path {
+  fill: white;
+}
+.suche__button:hover {
+  background: white;
+  color: #4da9ff;
+}
+.suche__button:hover path {
+  fill: black;
+}
+
+
+/* - - - - - jobs - - - - - */
+.jobs {
+
+}
+
+/* - - - - - job - - - - - */
+.job {
+  margin: 10px 0;
+  background: white;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+
+  display: flex;
+  align-items: center;
+
+  color: black;
+  text-decoration: none;
+  will-change: transform;
+  transition: 0.2s transform;
+}
+.job:hover {
+  transform: scale(1.01, 1.01);
+}
+.job img {
+  margin: 5px 20px 5px 5px;
+  height: 100px;
+  width: 100px;
+}
+.job__name {
+  font-size: 20px;
+  font-weight: bolder;
+}
+.job__company {
+
+}
