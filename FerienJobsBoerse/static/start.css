@@ -1,0 +1,85 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Pangolin', cursive;
+    font-size100%;
+}
+
+/*
+    HERO - bereich ganz oben
+ */
+.hero {
+    margin: 50px;
+}
+.hero_suche {
+    /*
+    position: relative;
+    left:34%;
+    right:34%;
+    */
+    margin:60px;
+}
+
+
+
+.zwei{
+    height:300px ;
+    width:200px ;
+}
+
+h1 {
+   text-align: center;
+    text-decoration: underline;
+}
+.button1 {
+    background-color: white;
+    border:2px solid #4da9ff ;
+}
+.button1 a{
+    color: black;
+}
+.button1:hover {
+    background-color: #4da9ff;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+.button1 a:hover{
+    color:white;
+}
+.button2 {
+    background-color: white;
+    color: black;
+    border: 2px solid #4da9ff;
+    padding: 12px 28px;
+    text-align: center;
+    position: relative;
+    left:35%;
+    right:35%;
+    margin:20px;
+}
+.button2:hover {
+    background-color: #4da9ff;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.jobs {
+    display: flex;
+    flex-wrap: wrap;
+}
+.job {
+    width: 48%;
+    background:#b3d9ff;
+    color: white;
+    margin: 5px;
+    padding: 10px;
+}
+
+footer{
+    background-color:#0084ff;
+    color:white;
+    text-align:center;
+    margin:5px;
+}
