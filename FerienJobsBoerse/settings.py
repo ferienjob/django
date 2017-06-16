@@ -79,8 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'FerienJobBoerse2211',
         'USER': 'FerienJobBoerse2211',
-        'PASSWORD': 'tERgQc3MDlUsqeeZ',
-        'HOST': 'localhost',
+        'HOST': '127.0.0.1',
         'PORT': '3306',
     }
 }
