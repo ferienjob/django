@@ -16,10 +16,13 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 from FerienJobsBoerse import views
 
 urlpatterns = [
     url(r'^admin/', (admin.site.urls)),
     url(r'^$' ,views.start),
     url(r'^suche/$' ,views.suche)
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+print(settings.STATIC_URL, settings.STATIC_ROOT)
