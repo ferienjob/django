@@ -1,0 +1,15 @@
+.container {
+    margin: 0 auto;
+    width: 70%;
+}
+
+body {
+    font-family: 'Pangolin', cursive;
+}
+h1{
+    text-decoration: underline;
+
+}
+function formSubmit(){
+   document.forms["myForm"].submit();
+}
