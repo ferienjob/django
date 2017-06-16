@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %} - Ferienjobs für Jugendliche</title>
+    <link href="https://fonts.googleapis.com/css?family=Pangolin" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static "global.css" %}">
+    {% block head %}
+    {% endblock %}
+  </head>
+  <body>
+    <header>
+      <a href="/" class="brand">Ferienjob</a>
+      <nav>
+        {% for route in routes %}
+          {% if route.key == current_route %}
+            <a href="{{ route.key }}" class="active">{{ route.name }}</a>
+          {% else %}
+            <a href="{{ route.key }}">{{ route.name }}</a>
+          {% endif %}
+        {% endfor %}
+      </nav>
+    </header>
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>

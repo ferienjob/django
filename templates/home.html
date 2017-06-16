@@ -1,4 +1,52 @@
+
+{% extends "_base.html" %}
 {% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block head %}
+  <link rel="stylesheet" type="text/css" href="{% static "home.css" %}">
+{% endblock %}
+
+{% block content %}
+  <form class="hero" action="/suche" method="get">
+      <h1>Ferienjob Börse für Jugendliche</h1>
+      <div class="hero_suche">
+          <input placeholder="Job" name="title">
+          <input placeholder="Ort" name="ort">
+          <button class="button1">
+              <a href="#">
+                  <i class="fa fa-search fa-3x" ></i>
+              </a>
+          </button>
+      </div>
+  </form>
+
+
+  <div class="jobs">
+       <div class="job">
+          <p>Hallo</p>
+       </div>
+       <div class="job">
+          <p>peace</p>
+       </div>
+       <div class="job">
+           <p>Sieben</p>
+       </div>
+       <div class="job">
+           <p>Acht</p>
+       </div>
+  </div>
+
+  <div class="mitte">
+      <button class="button2"> Mehr</button>
+  </div>
+
+  <footer>Impressum</footer>
+{% endblock %}
+
+
+<!-- {% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,21 +56,22 @@
     <link href="https://fonts.googleapis.com/css?family=Pangolin" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="{% static "home.css" %}">
+
 </head>
 
 <body>
-    <div class="hero">
+    <form class="hero" action="/suche" method="get">
         <h1>Ferienjob Börse für Jugendliche</h1>
         <div class="hero_suche">
-            <input placeholder="Job">
-            <input placeholder="Ort">
+            <input placeholder="Job" name="title">
+            <input placeholder="Ort" name="ort">
             <button class="button1">
                 <a href="#">
                     <i class="fa fa-search fa-3x" ></i>
                 </a>
             </button>
         </div>
-    </div>
+    </form>
 
 
     <div class="jobs">
@@ -46,4 +95,4 @@
 
     <footer>Impressum</footer>
 </body>
-</html>
+</html> -->
