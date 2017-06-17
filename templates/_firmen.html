@@ -11,7 +11,21 @@
     <ul>
       {% for firma in firmen %}
         <li>
-          {{ firma.name }} {{ firma.email }}
+          <a href='/take_over/company/{{ firma.id }}'>Take Over</a>
+          <table>
+            <tr>
+              <td>id</td>
+              <td>{{ firma.id }}</td>
+            </tr>
+            <tr>
+              <td>name</td>
+              <td>{{ firma.name }}</td>
+            </tr>
+            <tr>
+              <td>email</td>
+              <td>{{ firma.email }}</td>
+            </tr>
+          </table>
         </li>
       {% endfor %}
     </ul>

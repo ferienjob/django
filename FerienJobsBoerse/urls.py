@@ -32,8 +32,10 @@ urlpatterns = [
 
     url(r'^add/firma/$', views.serve_create_company),
     url(r'^create_company/$', views.create_company), # form
+    url(r'^firmen/$', views.list_companies),
 
-    url(r'^firmen/$', views.firmen),
+    url(r'^take_over/company/(?P<id>\d+)/$', views.take_over_company),
+
     # url(r'^company/' ,views.company),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 print(settings.STATIC_URL, settings.STATIC_ROOT)

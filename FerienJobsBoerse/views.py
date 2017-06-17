@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.template import Context , loader
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 # from django.http import JsonResponse
 from django.http import HttpResponse, JsonResponse
 import json
@@ -71,7 +71,14 @@ def job(request, id):
         }
     )
 
-def firmen(request):
+def take_over_company(request, id):
+    request.session['company_id'] = int(id)
+    # return HttpResponse(id)
+    return redirect('/firmen/')
+
+
+
+def list_companies(request):
     firmen = models.Job.objects.raw('''
         SELECT * FROM FerienJobsBoerse_company
     ''')
