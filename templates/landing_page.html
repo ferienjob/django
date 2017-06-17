@@ -1,0 +1,43 @@
+{% extends "_base.html" %}
+{% load static %}
+
+{% block title %}Suche{% endblock %}
+
+{% block head %}
+  <link rel="stylesheet" type="text/css" href="{% static "landing_page.css" %}">
+{% endblock %}
+
+{% block content %}
+  <div class="hero" style="background-image: url('{% static "landscape.jpg" %}')">
+    <div class="hero__overlay"></div>
+    <div class="hero__center">
+      <h1>Ferien Jobs</h1>
+      <h2>Suche dir jetzt aus 200 Ferien Jobs deinen richtigen aus!</h2>
+    </div>
+  </div>
+  <div class="container">
+    <div class="description__container">
+      <div class="description__text">
+        <h3>Von jungen Leuten für junge Leute</h3>
+        <p>
+          Du willst feiern, shoppen und deinen Führerschein machen.
+          Doch weißt nicht wie du es finanzieren sollst?
+          Hier ist deine persönliche Lösung, finde mit uns deinen perfekten Ferienjob.
+        </p>
+      </div>
+      <img src='https://code.design/wp-content/uploads/2016/11/f89a370e-532x355.jpg' />
+    </div>
+    <div class="description__container">
+      <img src='https://code.design/wp-content/uploads/2016/11/f89a370e-532x355.jpg' />
+      <div class="description__text">
+        <h3>Verküpft Unternehmen mit jungen Leuten</h3>
+        <p>
+          Du willst feiern, shoppen und deinen Führerschein machen.
+          Doch weißt nicht wie du es finanzieren sollst?
+          Hier ist deine persönliche Lösung, finde mit uns deinen perfekten Ferienjob.
+        </p>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}
