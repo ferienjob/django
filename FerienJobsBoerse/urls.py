@@ -25,6 +25,10 @@ urlpatterns = [
     url(r'^$' ,views.home),
     url(r'^suche/' ,views.suche),
     url(r'^login/' ,views.login),
+<<<<<<< Updated upstream
     url(r'^job/(?P<id>\d+)/$', views.job),
+=======
+    url(r'^company/' ,views.company)
+>>>>>>> Stashed changes
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 print(settings.STATIC_URL, settings.STATIC_ROOT)
