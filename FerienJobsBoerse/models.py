@@ -7,6 +7,7 @@ class Person(models.Model):
     email = models.CharField(max_length=30)
     password = models.CharField(max_length=101)
     description = models.CharField(max_length=256)
+    image = models.CharField(max_length=23)
 
 
 class Company(models.Model):
@@ -17,6 +18,13 @@ class Company(models.Model):
     fax_number = models.CharField(max_length=20)
     email = models.CharField(max_length=30)
     password = models.CharField(max_length=101)
+    image = models.CharField(max_length=23)
+
+    @classmethod
+    def create(cls, data):
+        company = cls(data)
+        # do something with the book
+        return company
 
 class Job(models.Model):
     title = models.CharField(max_length=30)
@@ -24,3 +32,4 @@ class Job(models.Model):
     min_age = models.CharField(max_length= 2)
     date = models.CharField(max_length=10)
     from_to_date =models.CharField(max_length=23)
+    image = models.CharField(max_length=23)
