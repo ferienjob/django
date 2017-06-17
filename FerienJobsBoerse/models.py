@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 class Person(models.Model):
@@ -10,14 +11,6 @@ class Person(models.Model):
     date_of_birth = models.CharField(max_length=30)
     qualifications = models.CharField(max_length=30)
     wish_sector = models.CharField(max_length=30)
-
-    # - - old - - #
-    # day_of_birth = models.CharField(max_length=10)
-    # email = models.CharField(max_length=30)
-    # password = models.CharField(max_length=101)
-    # description = models.CharField(max_length=256)
-    # image = models.CharField(max_length=23)
-
 
 class Company(models.Model):
     email = models.CharField(max_length=30, unique=True)
@@ -34,13 +27,6 @@ class Company(models.Model):
     contact_email = models.CharField(max_length=30)
     contact_telephone_number = models.CharField(max_length=30)
     contact_image_url = models.CharField(max_length=30)
-
-    # - - old - - #
-    # date = models.CharField(max_length=10)
-    # phone_number = models.CharField(max_length=20)
-    # fax_number = models.CharField(max_length=20)
-    # email = models.CharField(max_length=30)
-    # image = models.CharField(max_length=23)
 
     @classmethod
     def create(cls, data):
@@ -67,7 +53,18 @@ class Job(models.Model):
     requirements = models.CharField(max_length= 30)
     image_url = models.CharField(max_length= 30)
 
-    # - - old - - #
-    # date = models.CharField(max_length=10)
-    # from_to_date =models.CharField(max_length=23)
-    # image = models.CharField(max_length=23)
+class Link(models.Model):
+    url = models.URLField(unique=1)
+
+    def __unicode__(self):
+        return self.title
+
+class Lesezeichen(models.Model):
+    title =  models.CharField(max_length=200)
+    benutzer = models.ForeignKey(User)
+    link = models.ForeignKey(Link)
+
+    def __unicode__(self):
+        return self.title
+
+

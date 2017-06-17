@@ -14,14 +14,13 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from FerienJobsBoerse import views
 
 urlpatterns = [
-    url(r'^admin/', (admin.site.urls)),
     url(r'^$' ,views.home),
     url(r'^suche/' ,views.suche),
     # url(r'^login/' ,views.login),
@@ -37,5 +36,7 @@ urlpatterns = [
     url(r'^take_over/company/(?P<id>\d+)/$', views.take_over_company),
 
     # url(r'^company/' ,views.company),
+    ##url(r'^login/' ,views.login),
+    url(r'^job/(?P<id>\d+)/$', views.job),
+    ##url(r'^company/' ,views.company),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-print(settings.STATIC_URL, settings.STATIC_ROOT)

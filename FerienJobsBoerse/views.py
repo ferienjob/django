@@ -12,8 +12,6 @@ routes = [
     {'name': 'Suche', 'key': '/suche/'}
 ]
 
-# def base(request):
-#     return render(request, '../templates/base.html', {'message':'Hello Word 123'})
 
 def home(request):
     return render(request, '../templates/home.html', {'routes': routes, 'current_route': '/'})
