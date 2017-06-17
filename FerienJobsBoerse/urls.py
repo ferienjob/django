@@ -22,9 +22,9 @@ from FerienJobsBoerse import views
 
 urlpatterns = [
     url(r'^admin/', (admin.site.urls)),
-    url(r'^$' ,views.start),
+    url(r'^$' ,views.home),
     url(r'^suche/' ,views.suche),
     url(r'^login/' ,views.login),
-    url(r'^job/' ,views.login)
+    url(r'^job/(?P<id>\d+)/$', views.job),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 print(settings.STATIC_URL, settings.STATIC_ROOT)
