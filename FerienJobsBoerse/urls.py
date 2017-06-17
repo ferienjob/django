@@ -24,8 +24,16 @@ urlpatterns = [
     url(r'^admin/', (admin.site.urls)),
     url(r'^$' ,views.home),
     url(r'^suche/' ,views.suche),
-    url(r'^login/' ,views.login),
+    # url(r'^login/' ,views.login),
     url(r'^job/(?P<id>\d+)/$', views.job),
-    url(r'^company/' ,views.company),
+
+    url(r'^add/job/$', views.serve_create_job),
+    url(r'^create_job/$', views.create_job),
+
+    url(r'^add/firma/$', views.serve_create_company),
+    url(r'^create_company/$', views.create_company), # form
+
+    url(r'^firmen/$', views.firmen),
+    # url(r'^company/' ,views.company),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 print(settings.STATIC_URL, settings.STATIC_ROOT)

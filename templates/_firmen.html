@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Firmen</title>
+  </head>
+  <body>
+    <p>
+      Current: {{current_firma_id}}
+    </p>
+    <ul>
+      {% for firma in firmen %}
+        <li>
+          {{ firma.name }} {{ firma.email }}
+        </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

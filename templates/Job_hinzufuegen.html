@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="Job_hinzufügen_style.css">
+    <meta charset="UTF-8">
+    <title>Job-Anzeige hinzufügen</title>
+</head>
+<body>
+<div class="container">
+     <h1> Job-Anzeige erstellen</h1>
+
+    <form  method="get" name="myForm" action="/create_job">
+
+        <p><span> Foto:</span> <input type="text" name="image_url"><br></p>
+        <p><span>Name:</span> <input type="text" name="title"><br></p>
+        <p><span>Berufsfeld:</span> <input type="text" name="professional_field"><br></p>
+        <p><span>Adresse:</span> <input type="text" name="address"><br></p>
+        <p><span>Von:</span> <input type="text" name="start_date"><br></p>
+        <p><span>Bis:</span> <input type="text" name="end_date"><br></p>
+
+        <p><span>Beginn:</span> <input type="text" name="start_time"><br></p>
+        <p><span>Ende:</span> <input type="text" name="end_time"><br></p>
+        <p><span>Mindestalter:</span> <input type="text" name="min_age"><br></p>
+        <p><span>Verdienst pro Stunde:</span> <input type="text" name="income_per_hour"><br></p>
+        <p><span>Beschreibung:</span> <input type="text" name="description"><br></p>
+        <p><span>Anforderungen:</span> <input type="text" name="requirements"><br></p>
+
+
+        <button class="Job_anzeigen"> Jetzt Job-Anzeige erstellen</button>
+
+    </form>
+
+</div>
+</body>
+</html>

@@ -1,6 +1,14 @@
 # FerienJobsBörse
 Diese Website einer FerienJobsBörse entsteht im Rahmen des Code + Design Camp Köln 2017
 
+
+## Random
+
+- setup db `python manage.py makemigrations FerienJobsBoerse`
+- `python manage.py migrate`
+- `python manage.py runserver`
+
+
 ## Requirements
 
 - `python3`

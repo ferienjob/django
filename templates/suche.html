@@ -17,18 +17,23 @@
       >
       <label class="suche__title">
         Job
-        <input name="title" placeholder="z.B.: Koch" />
+        <input value="{{ current_job_title }}" name="title" placeholder="z.B.: Koch" />
       </label>
       <label class="suche__branche">
         Branche
         <select name="branche">
-          <option value="alle">... in allen</option>
-          <option value="gastronomie">... in Gastronomie</option>
+          {% for branche in branchen %}
+            {% if branche.key == current_branche %}
+              <option selected value="{{ branche.key }}">{{ branche.name }}</option>
+            {% else %}
+              <option value="{{ branche.key }}">{{ branche.name }}</option>
+            {% endif %}
+          {% endfor %}
         </select>
       </label>
       <label class="suche__ort">
         Ort
-        <input name="ort" placeholder="z.B.: Köln" />
+        <input value="{{ current_ort }}" name="ort" placeholder="z.B.: Köln" />
       </label>
       <button class="suche__button" type='submit'>
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
@@ -38,20 +43,15 @@
     </form>
 
     <div class="jobs">
-      <a class="job" href="/job/1">
-        <img src="http://via.placeholder.com/100x100" />
-        <div class="job__info">
-          <p class="job__name">Koch</p>
-          <p class="job__company">Code+Design Camp</p>
-        </div>
-      </a>
-      <a class="job" href="/job/2">
-        <img src="http://via.placeholder.com/100x100" />
-        <div class="job__info">
-          <p class="job__name">Barkeeper</p>
-          <p class="job__company">Code+Design Camp</p>
-        </div>
-      </a>
+      {% for job in jobs %}
+        <a class="job" href="/job/{{ job.id }}">
+          <img src="{{ job.image }}" />
+          <div class="job__info">
+            <p class="job__name">{{ job.title }}</p>
+            <p class="job__company">{{ job.company }}</p>
+          </div>
+        </a>
+      {% endfor %}
     </div>
 
   </div>

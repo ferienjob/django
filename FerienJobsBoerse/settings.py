@@ -81,10 +81,12 @@ WSGI_APPLICATION = 'FerienJobsBoerse.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'FerienJobBoerse2211',
-        'USER': 'FerienJobBoerse2211',
+        'NAME': 'ferien_jobs',
+        'USER': 'root',
+        'PASSWORD': 'root',
         'HOST': '127.0.0.1',
-        'PORT': '3306',
+        # 'PORT': '3306',
+        'PORT': '8889'
     }
 }
 
