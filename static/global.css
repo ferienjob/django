@@ -8,6 +8,11 @@ body {
 }
 
 header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+
   font-family: sans-serif;
 
   background: white;
@@ -16,23 +21,40 @@ header {
 
   display: flex;
 
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  /*position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;*/
 }
 header a.brand, header nav a {
   color: black;
   text-decoration: none;
 }
 header a.brand {
-
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header a.brand svg {
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
 }
 header nav {
   margin-left: auto;
 }
 header nav a {
+  font-size: 16px;
   border-bottom: 2px solid transparent;
+  font-weight: lighter;
+  text-transform: uppercase;
 }
 header nav a:not(:last-child) {
-  margin: 0 10px;
+  margin: 0 30px;
 }
 header nav a:hover, header nav a.active {
   border-bottom: 2px solid black;

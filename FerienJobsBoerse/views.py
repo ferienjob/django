@@ -14,7 +14,8 @@ routes = [
 
 
 def home(request):
-    return render(request, '../templates/home.html', {'routes': routes, 'current_route': '/'})
+    # return render(request, '../templates/home.html', {'routes': routes, 'current_route': '/'})
+    return render(request, '../templates/landing_page.html', {'routes': routes, 'current_route': '/'})
 
 
 
