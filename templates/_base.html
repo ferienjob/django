@@ -27,6 +27,11 @@
             <a href="{{ route.key }}">{{ route.name }}</a>
           {% endif %}
         {% endfor %}
+
+        {% if current_company.id %}
+          <div class="spacer"></div>
+          <a href="/firma/{{current_company.id}}">{{current_company.name}}</a>
+        {% endif %}
       </nav>
     </header>
     {% block content %}

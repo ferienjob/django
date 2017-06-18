@@ -56,8 +56,7 @@ ROOT_URLCONF = 'FerienJobsBoerse.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
-        ,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -65,13 +64,12 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                'FerienJobsBoerse.processors.current_company_processor',
             ],
         },
     },
 ]
-# TEMPLATE_DIRS = (
-#     os.path.join(os.path.dirname(__file__), 'templates'),
-# )
 WSGI_APPLICATION = 'FerienJobsBoerse.wsgi.application'
 
 

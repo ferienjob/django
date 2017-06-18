@@ -45,7 +45,7 @@ def home(request):
     # return render(request, '../templates/home.html', {'routes': routes, 'current_route': '/'})
     return render(
         request,
-        '../templates/landing_page.html',
+        'landing_page.html',
         {
             'routes': routes,
             'current_route': '/',
@@ -104,6 +104,13 @@ def job(request, id):
 
 def take_over_company(request, id):
     request.session['company_id'] = int(id)
+    company = models.Job.objects.raw('''
+        SELECT * FROM FerienJobsBoerse_company
+        WHERE id = %s
+    ''', [int(id)])[0]
+
+    request.session['company_name'] = company.name
+
     # return HttpResponse(id)
     return redirect('/firmen/')
 
