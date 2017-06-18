@@ -86,7 +86,10 @@ DATABASES = {
         'PASSWORD': 'root',
         'HOST': '127.0.0.1',
         #'PORT': '3306',
-        'PORT': '8889'
+        'PORT': '8889',
+        'OPTIONS': {
+            'sql_mode': 'STRICT_ALL_TABLES',
+        },
     }
 }
 
@@ -132,4 +135,3 @@ STATICFILES_DIRS = (
 )
 
 print(BASE_DIR)
-

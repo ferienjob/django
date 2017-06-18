@@ -39,22 +39,12 @@
 
     <h3 class="jobs__title">Jobs in deiner Nähe</h3>
     <div class="jobs">
-      <a class="job" href="/job/1">
-        <p class="job__title">Koch</p>
-        <p class="job__company">Code+Design Camp</p>
-      </a>
-      <a class="job" href="/job/2">
-        <p class="job__title">Developer</p>
-        <p class="job__company">Code+Design Camp</p>
-      </a>
-      <a class="job" href="/job/3">
-        <p class="job__title">Koch</p>
-        <p class="job__company">Code+Design Camp</p>
-      </a>
-      <a class="job" href="/job/4">
-        <p class="job__title">Kellner</p>
-        <p class="job__company">Code+Design Camp</p>
-      </a>
+      {% for job in jobs %}
+        <a class="job" href="/job/1">
+          <!-- <p class="job__title">{{ job.title }}</p>
+          <p class="job__company">{{ job.company }}</p> -->
+        </a>
+      {% endfor %}
     </div>
   </div>
 {% endblock %}

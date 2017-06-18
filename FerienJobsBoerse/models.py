@@ -31,12 +31,6 @@ class Company(models.Model):
     @classmethod
     def create(cls, data):
         company = cls(data)
-        # try:
-        #     company = cls(data)
-        # except:
-        #     print "Unexpected error:", sys.exc_info()[0]
-        #     raise
-
         return company
 
 class Job(models.Model):
@@ -53,18 +47,8 @@ class Job(models.Model):
     requirements = models.CharField(max_length= 30)
     image_url = models.CharField(max_length= 30)
 
-class Link(models.Model):
-    url = models.URLField(unique=1)
-
-    def __unicode__(self):
-        return self.title
-
-class Lesezeichen(models.Model):
-    title =  models.CharField(max_length=200)
-    benutzer = models.ForeignKey(User)
-    link = models.ForeignKey(Link)
-
-    def __unicode__(self):
-        return self.title
-
-
+    company = models.ForeignKey(
+        'Company',
+        # null=True,
+        default=None
+    )

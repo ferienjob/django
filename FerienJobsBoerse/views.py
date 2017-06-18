@@ -11,11 +11,48 @@ routes = [
     {'name': 'Home', 'key': '/'},
     {'name': 'Suche', 'key': '/suche/'}
 ]
+branchen = [
+    {'name': '... in allen', 'key': 'alle'},
+    {'name': '... in Gastronomie', 'key': 'gastronomie'},
+    {'name': '... in IT', 'key': 'it'},
+    {'name': '... in Handwerk', 'key': 'handwerk'},
+    {'name': '... in Tourismus', 'key': 'tourismus'},
+    {'name': '... in Handel', 'key': 'handel'},
+    {'name': '... in Bauwesen', 'key': 'bauwesen'},
+    {'name': '... in Soziales', 'key': 'soziales'},
+    {'name': '... in Offentlicher Dienst', 'key': 'offentlicher_dienst'},
+    {'name': '... in Industrie', 'key': 'industrie'},
+    {'name': '... in Umwelt', 'key': 'umwelt'},
+    {'name': '... in Logistik', 'key': 'logistik'},
+    {'name': '... in Erziehung', 'key': 'erziehung'},
+    {'name': '... in Bildung', 'key': 'bildung'},
+    {'name': '... in Marketing', 'key': 'marketing'}
+]
 
 
 def home(request):
+    count = models.Job.objects.raw('''
+        SELECT id, COUNT(*) AS count
+        FROM FerienJobsBoerse_job
+    ''')[0].count
+
+    jobs = models.Job.objects.raw('''
+        SELECT id, title, company_id
+        FROM FerienJobsBoerse_job
+        LIMIT 4
+    ''')
+
     # return render(request, '../templates/home.html', {'routes': routes, 'current_route': '/'})
-    return render(request, '../templates/landing_page.html', {'routes': routes, 'current_route': '/'})
+    return render(
+        request,
+        '../templates/landing_page.html',
+        {
+            'routes': routes,
+            'current_route': '/',
+            'count': count,
+            'jobs': jobs
+        }
+    )
 
 
 
@@ -24,11 +61,6 @@ def suche(request):
     job_title = request.GET.get('title', '')
     branche = request.GET.get('branche', '')
     ort = request.GET.get('ort', '')
-
-    branchen = [
-        {'name': '... in allen', 'key': 'alle'},
-        {'name': '... in Gastronomie', 'key': 'gastronomie'}
-    ]
 
     jobs = models.Job.objects.raw('SELECT * FROM FerienJobsBoerse_job')
 
@@ -121,6 +153,8 @@ def create_job(request):
         description = params.get('description', ''),
         requirements = params.get('requirements', ''),
         image_url = params.get('image_url', ''),
+
+        company_id = request.session.get('company_id', None)
     )
     job.save()
     return HttpResponse(job.id)
