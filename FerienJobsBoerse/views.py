@@ -97,10 +97,31 @@ def job(request, id):
     # Find Job by id
     # job = next((x for x in jobs if x['id'] == int(id)), None)
     job = models.Job.objects.raw('''
-        SELECT * FROM FerienJobsBoerse_job
-        WHERE id = %s
+        SELECT
+            *,
+            `FerienJobsBoerse_company`.`id` as company_id,
+            `FerienJobsBoerse_company`.`name` as company_name,
+
+            `FerienJobsBoerse_company`.`contact_first_name`,
+            `FerienJobsBoerse_company`.`contact_last_name`,
+            `FerienJobsBoerse_company`.`contact_email`,
+            `FerienJobsBoerse_company`.`contact_telephone_number`,
+            `FerienJobsBoerse_company`.`contact_image_url`
+
+        FROM FerienJobsBoerse_job
+
+        INNER JOIN `FerienJobsBoerse_company`
+        ON `FerienJobsBoerse_job`.company_id = `FerienJobsBoerse_company`.id
+
+        WHERE `FerienJobsBoerse_job`.id = %s
         LIMIT 1
     ''', [int(id)])[0]
+
+    # contact_first_name = models.CharField(max_length=30)
+    # contact_last_name = models.CharField(max_length=30)
+    # contact_email = models.CharField(max_length=30)
+    # contact_telephone_number = models.CharField(max_length=30)
+    # contact_image_url = models.CharField(max_length=300)
 
     return render(
         request,

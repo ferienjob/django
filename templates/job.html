@@ -13,7 +13,7 @@
 
     <div class="Infos_U">
         <p><span>Tätigkeit:</span> {{job.title}}</p>
-        <p><span>Firma:</span> {{job.company}}</p>
+        <p><span>Firma:</span> {{job.company_name}}</p>
         <p><span>Von:</span>{{job.start_date}}</p>
         <p><span>Bis:</span>{{job.end_date}}</p>
         <p><span>Adresse:</span>{{job.address}}</p>
@@ -40,19 +40,28 @@
 
 <div class="Container_A_unten">
     <div class="ansprechpatner__left">
-        <img class="Ansprechpatner" src="{{company.contact_image_url}}" width="200px">
+        <img class="Ansprechpatner" src="{{job.contact_image_url}}" width="200px">
 
         <button class="button">Jetzt Kontaktieren!</button>
     </div>
     <div class="infos_A">
-        <p><span> Vorname:</span>{{company.first_name}} </p>
-        <p><span> Nachname:</span>{{company.last_name}} </p>
-        <p><span> Homepage der Firma:</span>{{company.homepage}}</p>
-            <a href="https://code.berlin/de/">  </a>
-        <p><span> Telefonnummer:</span>{{company.contact_telephone_number}}</p>
-            <a href="tel:+49 (30) 120 859 61"></a>
-        <p><span> E-Mail:</span>{{company.contact_email}}</p>
-            <a href="mailto:hello@code.berlin"> </a><br>
+        <p><span> Vorname:</span>{{job.first_name}} </p>
+        <p><span> Nachname:</span>{{job.last_name}} </p>
+        <p>
+          <span> Homepage der Firma:</span>
+          <a href="{{job.homepage}}">{{job.homepage}}</a>
+        </p>
+
+        <p>
+          <span> Telefonnummer:</span>
+          <a href="tel:{{job.contact_telephone_number}}">{{job.contact_telephone_number}}</a>
+        </p>
+
+        <p>
+          <span> E-Mail:</span>
+          <a href="mailto:{{job.contact_email}}">{{job.contact_email}}</a>
+          <br>
+        </p>
      </div>
 </div>
 {% endblock %}
