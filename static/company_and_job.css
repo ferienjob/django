@@ -4,11 +4,13 @@
 }
 .container {
     margin: 0 auto;
+    padding-top: 100px;
     width: 70%;
 }
 
 body {
-    font-family: 'Pangolin', cursive;
+    /*font-family: 'Pangolin', cursive;*/
+    font-family: sans-serif;
 }
 h1{
 text-decoration: underline;
@@ -109,7 +111,7 @@ h4{
     margin: 10px;
 
 }
-span a {
+/*span a {
     display: block;
 }
 
@@ -120,3 +122,5 @@ span {
 }
 a{
     color: black;
+
+}*/

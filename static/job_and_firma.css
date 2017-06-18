@@ -1,12 +1,12 @@
 
-.container {
+/*.container {
     margin: 0 auto;
     width: 70%;
-}
+}*/
 
-body {
+/*body {
     font-family: 'Pangolin', cursive;
-}
+}*/
 h1{
 text-decoration: underline;
 
@@ -83,12 +83,12 @@ h4{
     margin: 10px;
 
 }
-span{
+/*span{
     font-weight: bold
 }
 a{
     color: black;
-}
+}*/
 .Infos_Ansp {
     float: right;
     padding: 20px;
