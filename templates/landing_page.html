@@ -39,12 +39,12 @@
       </div>
     </div>
 
-    <h3 class="jobs__title">Jobs in deiner Nähe</h3>
+    <!-- <h3 class="jobs__title">Jobs in deiner Nähe</h3> -->
     <div class="jobs">
       {% for job in jobs %}
-        <a class="job" href="/job/1">
-          <!-- <p class="job__title">{{ job.title }}</p>
-          <p class="job__company">{{ job.company }}</p> -->
+        <a class="job" href="/job/{{ job.id }}">
+          <p class="job__title">{{ job.job_title }}</p>
+          <p class="job__company">{{ job.company_name }}</p>
         </a>
       {% endfor %}
     </div>

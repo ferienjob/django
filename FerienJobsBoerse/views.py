@@ -37,8 +37,20 @@ def home(request):
     ''')[0].count
 
     jobs = models.Job.objects.raw('''
-        SELECT id, title, company_id
-        FROM FerienJobsBoerse_job
+        SELECT
+        	`FerienJobsBoerse_job`.`id`,
+            `FerienJobsBoerse_job`.`title` as job_title,
+            `FerienJobsBoerse_job`.`description` as job_description,
+            `FerienJobsBoerse_company`.`id` as company_id,
+            `FerienJobsBoerse_company`.`name` as company_name
+
+        FROM `FerienJobsBoerse_job`
+
+
+        INNER JOIN `FerienJobsBoerse_company`
+        ON `FerienJobsBoerse_job`.company_id = `FerienJobsBoerse_company`.id
+
+        WHERE `FerienJobsBoerse_job`.id = 1
         LIMIT 4
     ''')
 
