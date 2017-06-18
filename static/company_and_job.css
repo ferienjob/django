@@ -1,0 +1,122 @@
+
+* {
+    box-sizing: border-box;
+}
+.container {
+    margin: 0 auto;
+    width: 70%;
+}
+
+body {
+    font-family: 'Pangolin', cursive;
+}
+h1{
+text-decoration: underline;
+
+}
+.Logo{
+    margin: 40px;
+    padding: 20px;
+    border: 1px solid #b3d9ff;
+    height: 180px;
+    width: 200px;
+}
+.Container_oben{
+    display: flex;
+    flex-align: center;
+    border: 2px solid #b3d9ff;
+    margin: 40px;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    padding: 20px;
+}
+.Infos_U a {
+    display: block;
+    margin: 3px 0 3px 0;
+}
+h2{
+    font-size: 25px;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+.Text{
+    margin: 40px;
+}
+
+
+
+.Container_A_unten{
+    border: 1px solid rgba(0, 0, 0, 0.1); /* #b3d9ff */
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 20px;
+    display: flex;
+    display: flex;
+    flex-align: center;
+    border-radius: 5px;
+}
+
+.ansprechpartner__left {
+    width: 30%;
+}
+.ansprechpartner__left img {
+    width: 100%;
+
+}
+.ansprechpartner__left button {
+    width: 100%;
+}
+
+
+.infos_A {
+    float: right;
+    padding: 20px;
+    margin: 20px;
+}
+
+h3{
+    font-size: 25px;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+.button {
+    background-color: white;
+    color: black;
+    border: 2px solid #4da9ff;
+    font-size: 16px;
+    margin: 4px 2px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.5s background;
+    padding: 5px 15px;
+
+}
+
+.button:hover{
+    background-color: #4da9ff;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+h4{
+    font-size: 25px;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+.fotos img {
+    width: 22%;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    margin: 10px;
+
+}
+span a {
+    display: block;
+}
+
+
+span {
+    font-weight: bold;
+    margin-top: 20px;
+}
+a{
+    color: black;
