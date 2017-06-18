@@ -15,7 +15,7 @@ body {
 /* - - - - - suche - - - - - */
 .suche {
   /*background: lightgrey;*/
-  margin: 50px 0 50px 0;
+  margin: 150px 0 50px 0;
 
   display: flex;
   align-items: flex-end;
